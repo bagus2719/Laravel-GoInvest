@@ -1,0 +1,379 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+.imge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px white solid;
+    flex-shrink: 0;
+}
+
+.imge img {
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile h2 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.menu {
+    background-color: #191a19;
+    height: 100vh;
+    width: 60px;
+    padding: 20px;
+    overflow: hidden;
+    transition: width 0.3s;
+}
+
+.menu:hover {
+    width: 60vh;
+}
+
+ul {
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 45px;
+    transition: 0.5s;
+}
+
+ul li a:hover,
+.active {
+    background-color: green;
+}
+
+.log-out {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.log-out a {
+    background-color: #1e5128;
+}
+
+ul li a i {
+    font-size: 30px;
+}
+
+.content {
+    width: 100%;
+    margin: 10px;
+    overflow-x: auto;
+}
+
+.home-content h1 {
+    display: flex;
+    position: relative;
+    color: #191a19;
+}
+
+.title-info {
+    background-color: #1e5128;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.data-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.data-info .box {
+    height: 150px;
+    background-color: #191a19;
+    flex-basis: 250px;
+    flex-grow: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.data-info .box i {
+    font-size: 2.5rem;
+}
+
+.data-info .box .data {
+    text-align: center;
+}
+
+.data-info .box .data span {
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+}
+
+th,
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #1e5128;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+td {
+    color: #333333;
+    word-break: break-word; /* Ensures long text breaks into new lines */
+}
+
+.btn-edit,
+.btn-hps {
+    padding: 7px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px; /* Adds spacing between buttons */
+}
+
+.btn-edit {
+    background-color: #4e9f3d;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #1e5128;
+}
+
+.btn-hps {
+    font-size: 16px;
+    background-color: #ff0000;
+    color: white;
+}
+
+.btn-hps:hover {
+    background-color: #960909;
+}
+
+.btn-tmbh {
+    background-color: #4e9f3d;
+    font-size: 0.9rem;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.btn-tmbh:hover {
+    background-color: #1e5128;
+}
+
+.btn-cetak {
+    background-color: #be0000;
+    font-size: 0.9rem;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.btn-cetak:hover {
+    background-color: #8b0000;
+}
+
+.form-tambah {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.form-tambah label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.form-tambah input[type="text"],
+.form-tambah input[type="date"],
+.form-tambah input[type="number"],
+.form-tambah textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+}
+
+.form-tambah select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+}
+
+.form-tambah select option {
+    color: black;
+}
+
+.form-tambah input[type="submit"] {
+    background-color: #4e9f3d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-tambah input[type="submit"]:hover {
+    background-color: #1e5128;
+}
+
+.form-delete {
+    width: calc(100% - 20px);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-delete h4 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.form-delete button {
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-delete button:hover {
+    background-color: #1e5128;
+}
+
+@media screen and (max-width: 991.98px) {
+    .wrapper1 {
+        width: 90%;
+    }
+
+    .logo a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu {
+        width: 100%;
+        margin: 0;
+    }
+
+    .menu ul {
+        text-align: center;
+        margin: auto;
+        line-height: 60px;
+    }
+
+    .menu ul li {
+        display: inline-block;
+        float: none;
+    }
+
+    section {
+        display: block;
+    }
+
+    section img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        white-space: nowrap; /* Prevents table cells from wrapping */
+    }
+
+    .btn-edit,
+    .btn-hps {
+        padding: 5px 10px;
+        font-size: 0.8rem; /* Adjust button size for smaller screens */
+    }
+}

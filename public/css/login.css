@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "Monserrat";
+  src: url("../assets/fonts/Montserrat-Medium.ttf") format("truetype");
+}
+
+* {
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Monserrat";
+}
+
+.navbar {
+  width: 90%;
+  max-width: 100%;
+  min-height: 15%;
+  margin: auto;
+  position: relative;
+}
+
+.logo a {
+  font-size: 3rem;
+  font-weight: 800;
+  float: left;
+  font-family: "Monserrat", sans-serif;
+  color: #191a19;
+}
+
+.logo a span {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Monserrat", sans-serif;
+  color: #4e9f3d;
+}
+
+.menu {
+  float: right;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  line-height: 80px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  background: #ffffff;
+  z-index: 1;
+  border-bottom: 1px solid #364f6b;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 16px 0px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.wrapper .title {
+  font-family: "Monserrat", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-15deg, #1e5128, #4e9f3d);
+}
+
+.wrapper form {
+  padding: 10px 50px 50px 30px;
+}
+
+.wrapper form .field {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  justify-content: center;
+}
+
+.wrapper form .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-family: "Monserrat", sans-serif;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.wrapper form .field input:focus,
+form .field input:valid {
+  border-color: #1e5128;
+}
+
+.wrapper form .field label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-family: "Monserrat", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+form .field input:focus ~ label,
+form .field input:valid ~ label {
+  top: 0%;
+  font-family: "Monserrat", sans-serif;
+  font-size: 10px;
+  color: #1e5128;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+form .content {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-family: "Monserrat", sans-serif;
+  font-size: 12px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+form .content .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form .content input {
+  width: 15px;
+  height: 15px;
+  background: green;
+}
+
+form .content label {
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+
+form .content .pass-link {
+  color: "";
+}
+
+form .field input[type="submit"] {
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -5px;
+  font-family: "Monserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-15deg, #4e9f3d, #1e5128);
+  transition: all 0.3s ease;
+}
+
+form .field input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+form .signup-link,
+form .signin-link {
+  font-size: 12px;
+  color: #262626;
+  margin-top: 10px;
+  text-align: center;
+}
+
+form .pass-link a,
+form .signup-link a,
+form .signin-link a {
+  color: #4e9f3d;
+  text-decoration: none;
+}
+
+form .pass-link a:hover,
+form .signup-link a:hover,
+form .signin-link a:hover {
+  text-decoration: underline;
+}
+
+a.btn-sign-up,
+a.btn-signin {
+  background: #4e9f3d;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 15px 20px 15px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+a.btn-sign-up:hover,
+a.btn-signin:hover {
+  background: #1e5128;
+  text-decoration: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  font-family: "Monserrat", sans-serif;
+  font-size: 17px;
+  color: #999999;
+}
+
+select:focus {
+  border-color: #1e5128;
+}
+
+select option {
+  padding: 10px;
+  font-family: "Monserrat", sans-serif;
+  color: #191a19;
+}
+
+@media screen and (max-width: 991.98px) {
+  .navbar {
+    width: 90%;
+  }
+
+  .logo a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .menu {
+    width: 100%;
+    margin: 0;
+  }
+
+  nav .menu ul {
+    text-align: center;
+    margin: auto;
+    line-height: 60px;
+  }
+
+  nav .menu ul li {
+    display: inline-block;
+    float: none;
+  }
+
+  section {
+    display: block;
+  }
+
+  section img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .wrapper {
+    margin: 10% auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    width: 90%;
+  }
+
+  .logo a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .menu {
+    width: 100%;
+    margin: 0;
+  }
+
+  nav .menu ul {
+    text-align: center;
+    margin: auto;
+    line-height: 60px;
+  }
+
+  nav .menu ul li {
+    display: inline-block;
+    float: none;
+  }
+
+  section {
+    display: block;
+  }
+
+  section img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .wrapper {
+    margin: 50% auto;
+  }
+}
