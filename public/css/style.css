@@ -385,7 +385,7 @@ h3 {
 }
 
 #scrollToTopBtn {
-  display: none; /* Tombol disembunyikan secara default */
+  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;

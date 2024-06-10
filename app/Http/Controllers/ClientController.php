@@ -6,6 +6,8 @@ use App\Models\Clients;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Barryvdh\DomPDF\Facade\Pdf;
+
 class ClientController extends Controller
 {
     public function index()
@@ -67,5 +69,12 @@ class ClientController extends Controller
         $clients = Clients::findOrFail($id);
         $clients->delete();
         return redirect()->route('clients.index')->with('success', 'Client deleted successfully.');
+    }
+
+    public function cetak()
+    {
+        $clients = Clients::all();
+        $pdf = PDF::loadView('clients.cetak', compact('clients'));
+        return $pdf->download('data-client.pdf');
     }
 }

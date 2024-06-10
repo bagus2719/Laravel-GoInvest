@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
+use Barryvdh\DomPDF\Facade\Pdf;
+
 class ProductController extends Controller
 {
     public function index()
@@ -15,7 +17,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('products.create');
+        return view('products.create-product');
     }
 
     public function store(Request $request)
@@ -35,14 +37,14 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $product = Products::findOrFail($id);
-        return view('products.show', compact('product'));
+        $products = Products::findOrFail($id);
+        return view('products.show', compact('products'));
     }
 
     public function edit($id)
     {
-        $product = Products::findOrFail($id);
-        return view('products.edit', compact('product'));
+        $products = Products::findOrFail($id);
+        return view('products.edit-product', compact('products'));
     }
 
     public function update(Request $request, $id)
@@ -56,15 +58,21 @@ class ProductController extends Controller
             'deskripsi' => 'nullable|string',
         ]);
 
-        $product = Products::findOrFail($id);
-        $product->update($request->all());
+        $products = Products::findOrFail($id);
+        $products->update($request->all());
         return redirect()->route('products.index')->with('success', 'Product updated successfully.');
     }
 
     public function destroy($id)
     {
-        $product = Products::findOrFail($id);
-        $product->delete();
+        $products = Products::findOrFail($id);
+        $products->delete();
         return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
+    }
+
+    public function cetak(){
+        $products = Products::all();
+        $pdf = PDF::loadView('products.cetak', compact('products'));
+        return $pdf->download('data-products.pdf');
     }
 }

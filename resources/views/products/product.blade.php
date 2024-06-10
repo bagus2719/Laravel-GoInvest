@@ -10,7 +10,7 @@
     <a href="{{ route('products.create') }}"><button class="btn-tmbh">
             TAMBAH DATA
         </button></a>
-    <a href="{{ route('products.index') }}"><button class="btn-cetak">
+    <a href="{{ route('products.cetak') }}"><button class="btn-cetak">
             CETAK DATA
         </button></a>
     <table class="table-data">
@@ -27,9 +27,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($products as $index => $product)
+            @foreach($products as $product)
                 <tr>
-                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $loop->iteration  }}</td>
                     <td>{{ $product->kode_produk }}</td>
                     <td>{{ $product->nama_produk }}</td>
                     <td>{{ $product->harga }}</td>

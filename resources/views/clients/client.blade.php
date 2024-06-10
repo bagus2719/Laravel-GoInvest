@@ -8,7 +8,8 @@
         <p>Data Clients</p>
         <i class="fas fa-chart-bar"></i>
     </div>
-    <a href="{{ route('clients.create') }}"><button class="btn-tmbh">TAMBAH DATA</button></a>
+    <a href="{{ route('clients.create') }}"> <button class="btn-tmbh">TAMBAH DATA</button></a>
+    <a href="{{ route('clients.cetak') }}"><button class="btn-cetak">CETAK DATA</button></a>
     <table class="table-data">
         <thead>
             <tr>
@@ -23,23 +24,24 @@
         </thead>
         <tbody>
             @foreach($clients as $client)
-            <tr>
-                <td>{{ $loop->iteration }}</td>
-                <td>{{ $client->id_user }}</td>
-                <td>{{ $client->nama }}</td>
-                <td>{{ $client->tanggal_lahir }}</td>
-                <td>{{ $client->no_telp }}</td>
-                <td>{{ $client->alamat }}</td>
-                <td>
-                    <a href="{{ route('clients.edit', $client->id_client) }}" class="btn-edit">Edit</a>
-                    <form action="{{ route('clients.destroy', $client->id_client) }}" method="POST"
-                        style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn-hps">Delete</button>
-                    </form>
-                </td>
-            </tr>
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $client->id_user }}</td>
+                    <td>{{ $client->nama }}</td>
+                    <td>{{ $client->tanggal_lahir }}</td>
+                    <td>{{ $client->no_telp }}</td>
+                    <td>{{ $client->alamat }}</td>
+                    <td>
+                        <a href="{{ route('clients.edit', $client->id_client) }}" class="btn-edit">Edit</a>
+                        <form action="{{ route('clients.destroy', $client->id_client) }}" method="POST"
+                            style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-hps"
+                                onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
         </tbody>
     </table>

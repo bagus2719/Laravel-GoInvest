@@ -6,12 +6,14 @@ use App\Models\Transactions;
 use App\Models\Clients;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class TransactionController extends Controller
 {
     public function index()
     {
-        $transactions = Transactions::with(['clients', 'products    '])->get();
+
+        $transactions = Transactions::with(['client', 'product'])->get();
         return view('transactions.transaction', compact('transactions'));
     }
 
@@ -19,7 +21,7 @@ class TransactionController extends Controller
     {
         $clients = Clients::all();
         $products = Products::all();
-        return view('transactions.create', compact('clients', 'products'));
+        return view('transactions.create-transaction', compact('clients', 'products'));
     }
 
     public function store(Request $request)
@@ -47,7 +49,7 @@ class TransactionController extends Controller
         $transaction = Transactions::findOrFail($id);
         $clients = Clients::all();
         $products = Products::all();
-        return view('transactions.edit', compact('transaction', 'clients', 'products'));
+        return view('transactions.edit-transaction', compact('transaction', 'clients', 'products'));
     }
 
     public function update(Request $request, $id)
@@ -70,5 +72,12 @@ class TransactionController extends Controller
         $transaction = Transactions::findOrFail($id);
         $transaction->delete();
         return redirect()->route('transactions.index')->with('success', 'Transaction deleted successfully.');
+    }
+
+    public function cetak()
+    {
+        $transactions = Transactions::all();
+        $pdf = PDF::loadView('transactions.cetak', compact('transactions'));
+        return $pdf->download('data-transactions.pdf');
     }
 }

@@ -25,5 +25,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 
 Route::resource('/clients', ClientController::class);
+Route::get('.clients.cetak', [ClientController::class, 'cetak'])->name('clients.cetak');
 Route::resource('/products', ProductController::class);
+Route::get('.products.cetak', [ProductController::class, 'cetak'])->name('products.cetak');
 Route::resource('/transactions', TransactionController::class);
+Route::get('.transactions.cetak', [TransactionController::class, 'cetak'])->name('transactions.cetak');

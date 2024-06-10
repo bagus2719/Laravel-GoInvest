@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoInvest | Investasi Online</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{asset('css/style.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
@@ -24,16 +24,16 @@
                             <a href="#">Tentang Produk</a>
                         </div>
                     </li>
-                    <li><a href="news.php">Berita</a></li>
-                    <li><a href="about.php">Tentang</a></li>
-                    <li><a href="register.php" class="btn-sign-up">Sign Up</a></li>
+                    <li><a href="#">Berita</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#" class="btn-sign-up">Sign Up</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="wrapper">
         <section id="home">
-            <img src="assets/image/image-invest-1.png" alt="people" />
+            <img src="{{ asset('assets/image/image-invest-1.png') }}" alt="people" />
             <div class="kolom">
                 <p class="deskripsi">Ayo Mulai Investasi Sekarang Juga!</p>
                 <h2>Make all you can, save all you can, give all you can</h2>
@@ -46,9 +46,9 @@
         </section>
         <div class="carousel">
             <div class="slides">
-                <img src="assets/image/carousel-1.png" alt="slide image" class="slide" />
-                <img src="assets/image/carousel-2.png" alt="slide image" class="slide" />
-                <img src="assets/image/carousel-3.png" alt="slide image" class="slide" />
+                <img src="{{ asset('assets/image/carousel-3.png') }}" alt="slide image" class="slide" />
+                <img src="{{ asset('assets/image/carousel-1.png') }}" alt="slide image" class="slide" />
+                <img src="{{ asset('assets/image/carousel-2.png') }}" alt="slide image" class="slide" />
             </div>
             <div class="controls">
                 <div class="control prev-slide">&#9668;</div>
@@ -63,7 +63,7 @@
                 <div class="why_container">
                     <div class="box">
                         <div class="img-box">
-                            <img src="assets/image/icon-fitur-1.png" alt="" />
+                            <img src="{{asset('assets/image/icon-fitur-1.png') }}" alt="" />
                         </div>
                         <div class="detail-box">
                             <h5>Aman</h5>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="box">
                         <div class="img-box">
-                            <img src="assets/image/icon-fitur-2.png" alt="" />
+                            <img src="{{asset('assets/image/icon-fitur-2.png') }}" alt="" />
                         </div>
                         <div class="detail-box">
                             <h5>Terpercaya</h5>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="box">
                         <div class="img-box">
-                            <img src="assets/image/icon-fitur-3.png" alt="" />
+                            <img src="{{asset('assets/image/icon-fitur-3.png') }}" alt="" />
                         </div>
                         <div class="detail-box">
                             <h5>Cepat & Mudah</h5>
@@ -149,8 +149,9 @@
         </div>
     </div>
     <button class="fas fa-angle-double-up" id="scrollToTopBtn" onclick="scrollToTop()" title="Go to top"></button>
-    <script src="js/script.js"></script>
-    <script src="js/carousel.js"></script>
+
 </body>
+<script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/carousel.js')}}"></script>
 
 </html>

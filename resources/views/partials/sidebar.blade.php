@@ -32,8 +32,9 @@
             </a>
         </li>
         <li class="log-out">
-            <i class="fas fa-sign-out"></i>
-            <p>Log out</p>
+            <a href="#">
+                <i class="fas fa-sign-out"></i>
+                <p>Log out</p>
             </a>
         </li>
     </ul>
